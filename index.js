@@ -37,6 +37,13 @@ console.log(b); // 2
 function f() {
   return [1, 2, 3];
 }
-const [a, , b] = f();
+const [a, , b] = f(); // const [,,] = f();
 console.log(a); // 1
 console.log(b); // 3
+
+const [a, ...b] = [1, 2, 3];
+console.log(a); // 1
+console.log(b); // [2, 3]
+
+/* Object destruturing */
+
