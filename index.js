@@ -46,4 +46,70 @@ console.log(a); // 1
 console.log(b); // [2, 3]
 
 /* Object destruturing */
+const o = {p: 42, q: true};
+const {p, q} = o;
+console.log(p); // 42
+console.log(q); // true 
+
+/* Assignment without decalration */
+({a, b} = {a: 1, b: 2});
+console.log(a); //1
+
+/* Assigning to a new variable */
+const o = {p: 42, q: true};
+const {p: foo, q: bar} = o;
+console.log(foo); // 42 
+console.log(bar); // true
+
+/* Assignig new variable name with default value */
+const {a: aa = 10, b: bb = 5} = {a: 3};
+console.log(aa); // 3
+console.log(bb); // 5
+
+/* Unpacking fields passed as an object parameter */
+const user = {
+  id: 42,
+  displayName: 'jdoe',
+  fullName: {
+    firstName: 'John',
+    lastName: 'Doe'
+  }
+};
+function userId({id}) {
+  return id;
+}
+function whois({displayName, fullName: {firstName: name}}) {
+  return `${displayName} is ${name}`;
+}
+console.log(userId(user)); // 42
+console.log(whois(user));  // "jdoe is John"
+
+/* Computed object property name and destructuring */
+let key = 'z';
+let {[key]: foo} = {z: 'bar'};
+console.log(foo); // "bar"
+
+/* Invalied Javscript Identifier */
+const foo = { 'fizz-buzz': true };
+const { 'fizz-buzz': fizzBuzz } = foo;
+console.log(fizzBuzz); // "true"
+
+const props = [
+  { id: 1, name: 'Fizz'},
+  { id: 2, name: 'Buzz'},
+  { id: 3, name: 'FizzBuzz'}
+];
+for (const {id, name} of props) {
+console.log(name); // "Buzz"
+console.log(id);
+}
+
+/* Prototype chain is looked up when object is deconstructed */
+let obj = {self: '123'};
+//obj.__proto__.prot = '456';
+//const {self, prot} = obj;
+console.log(self);// self "123"
+//console.log(prot);// prot "456"（Access to the prototype chain）
+
+
 
