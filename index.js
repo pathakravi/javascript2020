@@ -114,7 +114,20 @@ console.log(self);// self "123"
 /* 
 Array object
 - Javascript does not have an explicit array data type.
+- Javascript have predefined Array object.
 */
+//legth property is special s it returns the index element of last element + 1
+var cats = [];
+cats[30] = ['Dusty'];
+console.log(cats.length); // 31
+
+/* Assigning length property truncates an array */
+var cats = ['Dusty', 'Misty', 'Twiggy'];
+console.log(cats.length); // 3
+cats.length = 2;
+console.log(cats); // logs "Dusty, Misty" - Twiggy has been removed
+cats.length = 0;
+console.log(cats); //
 
 
 
