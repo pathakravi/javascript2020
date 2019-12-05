@@ -129,5 +129,11 @@ console.log(cats); // logs "Dusty, Misty" - Twiggy has been removed
 cats.length = 0;
 console.log(cats); //
 
+/*
+Array methods
+concat() join two or more attay and return new arrray
+*/
+
+
 
 
