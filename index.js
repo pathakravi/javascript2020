@@ -111,5 +111,10 @@ let obj = {self: '123'};
 console.log(self);// self "123"
 //console.log(prot);// prot "456"（Access to the prototype chain）
 
+/* 
+Array object
+- Javascript does not have an explicit array data type.
+*/
+
 
 
